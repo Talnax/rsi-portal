@@ -2,39 +2,57 @@
   <v-app>
     <v-app-bar
       app
-      color="white"
-      >
+      color="white">
 
-      <!--
-      <v-toolbar-side-icon
-              @click.stop="drawer = !drawer">
-      </v-toolbar-side-icon>
-      -->
+      <!--<v-btn icon>-->
+        <!--<v-icon>menu</v-icon>-->
+      <!--</v-btn>-->
 
-      <v-btn icon>
-        <v-icon>menu</v-icon>
-      </v-btn>
-
-
-      <!--<v-app-bar-nav-icon></v-app-bar-nav-icon>-->
+      <v-app-bar-nav-icon
+        @click="onMenuClick()">
+      </v-app-bar-nav-icon>
 
       <v-toolbar-title style="">Retail Execution Portal</v-toolbar-title>
-      <!--<div class="d-flex align-center">-->
-      <!--</div>-->
+
       <v-spacer></v-spacer>
+
+      <v-layout v-layout align-center justify-end row fill-height>
+        <v-flex xs12 sm6 >
+          <label class="domain-name" >Domain:</label>
+          <v-combobox
+            class="combo-box-domain"
+            v-model="select_domain"
+            :items="domains"
+          ></v-combobox>
+
+        </v-flex>
+      </v-layout>
+
+
+
+
       <!--
       <v-btn
         href="https://github.com/vuetifyjs/vuetify/releases/latest"
         target="_blank"
         text>
-        <span class="mr-2">Latest Release</span>
+        <span class="mr-2">Domain: </span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
       -->
+
+      <v-btn
+          href="https://github.com/vuetifyjs/vuetify/releases/latest"
+          target="_blank"
+          text>
+        <span class="mr-2">Latest Release</span>
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
+
     </v-app-bar>
 
     <v-content>
-      <!--<router-view/>-->
+      <router-view/>
     </v-content>
 
     <v-navigation-drawer
@@ -90,6 +108,10 @@ export default {
   data() {
     return {
       drawer: true,
+      select_domain: "Americas",
+      domains: [
+        "Americas", "India"
+      ],
       items: [
         { title: 'Retail Execution Portal', icon: 'category' },
         { title: 'Retail Visibility', icon: 'visibility' },
@@ -118,8 +140,27 @@ export default {
   methods: {
     onItemClick(item) {
       console.log('onItemClick(item): ', item );
+    },
+    onMenuClick() {
+      console.log('onMenuClick() ' );
     }
-
   }
 };
 </script>
+
+<style lang="scss">
+  .domain-name {
+    position: absolute;
+    top: 18px;
+  }
+  .combo-box-domain {
+    font-size: 14px !important;
+    width: 100px;
+    /* left: 15px; */
+    top: 6px;
+    /* right: 33px; */
+    right: -87px;
+    margin-top: 12px;
+  }
+
+</style>
