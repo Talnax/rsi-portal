@@ -28,31 +28,25 @@
         </v-flex>
       </v-layout>
 
-
-
-
-      <!--
       <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        href="https://"
         target="_blank"
         text>
-        <span class="mr-2">Domain: </span>
-        <v-icon>mdi-open-in-new</v-icon>
+        <span class="mr-2">Kevin Lunn</span>
       </v-btn>
-      -->
 
       <v-btn
           href="https://github.com/vuetifyjs/vuetify/releases/latest"
           target="_blank"
           text>
-        <span class="mr-2">Latest Release</span>
+        <span class="mr-2">Logout</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
 
     </v-app-bar>
 
     <v-content>
-      <router-view/>
+      <!--<router-view/>-->
     </v-content>
 
     <v-navigation-drawer
@@ -152,14 +146,15 @@ export default {
   .domain-name {
     position: absolute;
     top: 18px;
+    font-size: 1.2rem;
   }
   .combo-box-domain {
-    font-size: 14px !important;
-    width: 100px;
+    /*font-size: 14px !important;*/
+    width: 96px;
     /* left: 15px; */
     top: 6px;
     /* right: 33px; */
-    right: -87px;
+    right: -81px;
     margin-top: 12px;
   }
 
