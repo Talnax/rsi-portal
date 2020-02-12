@@ -16,3 +16,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  .left-bar {
+    top: 63px !important;
+  }
+
+</style>
