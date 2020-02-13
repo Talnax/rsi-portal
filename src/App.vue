@@ -16,9 +16,10 @@
 
       <v-spacer></v-spacer>
 
-      <v-layout v-layout align-center justify-end row fill-height>
+      <v-layout align-center justify-end row fill-height>
         <v-flex xs12 sm6 >
-          <label class="domain-name" >Domain:</label>
+          <!--<label class="domain-name" >Domain:</label>-->
+          <!--label="Domain"-->
           <v-combobox
             class="combo-box-domain"
             v-model="select_domain"
@@ -49,12 +50,13 @@
       <!--<router-view/>-->
     </v-content>
 
+    <!--width="270"-->
+    <!--:mini-variant="miniVariant"-->
     <v-navigation-drawer
-      class="left-bar"
-      width="270"
+      class="left-vertical-bar"
       v-model="drawer"
       color="primary"
-      :mini-variant="miniVariant"
+      :mini-variant="mini"
       :right="right"
       absolute
       dark>
@@ -62,31 +64,24 @@
         dense
         nav
         class="py-0" >
-        <!--<v-list-item two-line :class="miniVariant && 'px-0'">-->
-          <!--<v-list-item-avatar>-->
-            <!--<img src="https://randomuser.me/api/portraits/men/81.jpg">-->
-          <!--</v-list-item-avatar>-->
-
-          <!--<v-list-item-content>-->
-            <!--<v-list-item-title>123456</v-list-item-title>-->
-            <!--<v-list-item-subtitle>Subtext</v-list-item-subtitle>-->
-          <!--</v-list-item-content>-->
-        <!--</v-list-item>-->
-
         <v-divider></v-divider>
-
         <v-list-item
           v-for="item in items"
           :key="item.title"
           @click="onItemClick(item)"
           link >
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
+          <v-tooltip right>
+            <template v-slot:activator="{ on }">
+            <!--<v-list-item-icon>-->
+              <v-icon v-on="on">{{ item.icon }}</v-icon>
+            <!--</v-list-item-icon>-->
+            </template>
+            <span>{{ item.title }}</span>
+          </v-tooltip>
 
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
+          <!--<v-list-item-content>-->
+            <!--<v-list-item-title>{{ item.title }}</v-list-item-title>-->
+          <!--</v-list-item-content>-->
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -95,18 +90,18 @@
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld';
-
 export default {
   name: 'App',
   data() {
     return {
-      drawer: true,
+
       select_domain: "Americas",
       domains: [
         "Americas", "India"
       ],
       items: [
+        { title: '000', icon: '' },
+        { title: '111', icon: '' },
         { title: 'Retail Execution Portal', icon: 'category' },
         { title: 'Retail Visibility', icon: 'visibility' },
         { title: 'Retail Entelligence', icon: 'share' },
@@ -127,8 +122,9 @@ export default {
       //   'red',
       //   'teal',
       // ],
-      right: false,
-      miniVariant: true
+      right: null,
+      mini: true,
+      drawer: true,
     };
   },
   methods: {
@@ -143,18 +139,18 @@ export default {
 </script>
 
 <style lang="scss">
+  .left-vertical-bar {
+    top: 9px !important;
+  }
   .domain-name {
     position: absolute;
     top: 18px;
     font-size: 1.2rem;
   }
   .combo-box-domain {
-    /*font-size: 14px !important;*/
     width: 96px;
-    /* left: 15px; */
-    top: 6px;
-    /* right: 33px; */
-    right: -81px;
+    top: 8px;
+    right: -72px;
     margin-top: 12px;
   }
 
