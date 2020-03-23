@@ -51,7 +51,6 @@
                     </v-list-item>
                 </v-list>
 
-
                 <v-divider class="divider"></v-divider>
 
                 <v-card-actions>

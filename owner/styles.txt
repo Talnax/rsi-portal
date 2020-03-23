@@ -1,0 +1,9 @@
+.icon-text {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 10px;
+    }
+
+  <p class="icon-text">
+    {{ item.title }}
+  </p>

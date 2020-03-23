@@ -43,12 +43,35 @@
       absolute
       dark>
       <!--<v-list dense nav class="py-0" >-->
-      <v-list  class="py-0" >
+      <v-list  >
         <img
           class="rsi-logo"
           :src="getImgUrl('bk/rsi-logo.jpg')" >
         <v-divider></v-divider>
 
+        <!--
+        <v-list-item
+          class="vertical-menu"
+          v-for="(item, i) in items"
+          :key="i"
+          @click="onItemClick(item)">
+          <v-icon v-text="item.icon"></v-icon>
+          <span class="icon-text">{{ item.title }}</span>
+        </v-list-item>
+        -->
+
+        <ul class="vertical-menu"
+            v-for="(item, i) in items"
+            :key="i"
+            @click="onItemClick(item)">
+          <li style="list-style-type: none; margin-left: -24px; text-align: center;">
+            <v-icon class="icon-icon" v-text="item.icon"></v-icon>
+            <br>
+            <span class="icon-text">{{ item.short }}</span>
+          </li>
+        </ul>
+
+        <!--
         <v-list-item
           class="vertical-menu"
           v-for="item in items"
@@ -57,6 +80,7 @@
           <v-icon class="icons-projects" >{{ item.icon }}</v-icon>
           <span class="icon-text">{{ item.title }}</span>
         </v-list-item>
+        -->
 
       </v-list>
     </v-navigation-drawer>
@@ -89,17 +113,17 @@ export default {
         "Americas", "India"
       ],
       items: [
-        { title: 'Retail Execution Portal', icon: 'category' },
-        { title: 'Retail Visibility', icon: 'visibility' },
-        { title: 'Retail Intelligence', icon: 'share' },
-        { title: 'Administration', icon: 'person' },
-        { title: 'Data Extract Mgmt', icon: 'dns'},
-        { title: 'Tableau', icon: 'timeline'},
-        { title: 'Data Availability', icon: 'signal_cellular_alt'},
-        { title: 'Power BI', icon: 'insert_chart_outlined'},
-        { title: 'OSA Power', icon: 'brightness_5'},
-        { title: 'Promo Power', icon: 'spa'},
-        { title: 'Pacific', icon: 'touch_app'}
+        { title: 'Retail Execution Portal', short: "REP", icon: 'category' },
+        { title: 'Retail Visibility', short: "RV",icon: 'visibility' },
+        { title: 'Retail Intelligence', short: "RE",icon: 'share' },
+        { title: 'Administration', short: "Admin",icon: 'person' },
+        { title: 'Data Extract Mgmt', short: "DEM",icon: 'dns'},
+        { title: 'Tableau', short: "REP",icon: 'timeline'},
+        { title: 'Data Availability', short: "DA",icon: 'signal_cellular_alt'},
+        { title: 'Power BI', short: "REP",icon: 'insert_chart_outlined'},
+        { title: 'OSA Power', short: "OSA",icon: 'brightness_5'},
+        { title: 'Promo Power', short: "Promo",icon: 'spa'},
+        { title: 'Pacific', short: "REP",icon: 'touch_app'}
       ],
       // color: 'primary',
       // colors: [
@@ -143,7 +167,8 @@ export default {
     //top: 9px !important;
 
     .vertical-menu {
-      //min-height: 55px !important;
+      min-height: 55px !important;
+      list-style-type: none;
 
       /*.v-list-item--dense, .v-list--dense .v-list-item {*/
         /*min-height: 45px;*/
@@ -152,17 +177,25 @@ export default {
       .icons-projects {
         //min-height: 35px !important;
       }
+      .icon-icon {
+        //margin-left: 6px;
+        width: 42px;
+        height: 42px;
+      }
       .icon-text {
-        /*margin-top: 3px;*/
-        /*text-align: center;*/
-        /*height: auto;*/
-        /*width: auto;*/
-        /*z-index: 100;*/
-        /*color: white;*/
-        /*font-size: 10px;*/
+        color: white;
+        font-size: 10px;
+        text-align: center;
+
       }
     }
+
+
+
   }
+
+
+
 
   .combo-box-domain {
     top: 15px;
@@ -203,7 +236,7 @@ export default {
 
   .rsi-logo {
     height: 27px;
-    margin-left: 9px;
+    margin-left: 2px;
     margin-top: 15px;
     margin-bottom: 6px;
     box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
