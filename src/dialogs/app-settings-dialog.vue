@@ -195,6 +195,7 @@
     }
 
     .app-settings_panel {
+
         .menu-users {
             margin-left: 9px;
             margin-top: -9px;
@@ -207,10 +208,10 @@
     }
 
     .app-settings_panel {
-        position: absolute;
-        //top: 51px;
-        //right: 24px;
-        //width: 330px;
+        position: absolute !important;
+        width: 360px !important;
+        top: 51px;
+        right: 30px !important;
 
         .head-line-content {
             margin-left: 72px;

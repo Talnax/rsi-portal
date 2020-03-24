@@ -178,6 +178,10 @@ export default {
     margin-right: 81px;
   }
 
+  .avatar-tool-bar {
+    text-align: center;
+  }
+
   .label-name,
   .label-logout {
     top: 6px;
@@ -189,7 +193,6 @@ export default {
       cursor: pointer;
     }
   }
-
   .v-toolbar {
     left: 56px !important;
     box-shadow: none !important;
