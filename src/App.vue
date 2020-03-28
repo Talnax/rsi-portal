@@ -8,9 +8,12 @@
 
       <v-spacer></v-spacer>
 
+      <!--solo-->
+      <!--single-line
+      outlined-->
       <v-text-field
         class="text-field-search-header"
-        label="Search">
+        placeholder="Search">
       </v-text-field>
 
       <v-combobox
@@ -42,7 +45,6 @@
       :right="right"
       absolute
       dark>
-      <!--<v-list dense nav class="py-0" >-->
       <v-list  class="py-0" >
         <img
           class="rsi-logo"
@@ -55,7 +57,9 @@
           :key="item.title"
           @click="onItemClick(item)">
           <v-icon class="icons-projects" >{{ item.icon }}</v-icon>
-          <span class="icon-text">{{ item.title }}</span>
+          <!--<span class="icon-text">{{ item.title }}</span>-->
+          <!--<span class="icon-text">{{ item.short }}</span>-->
+          <span class="icon-text" v-bind:style="item.marginLeft">{{ item.short }}</span>
         </v-list-item>
 
       </v-list>
@@ -89,17 +93,28 @@ export default {
         "Americas", "India"
       ],
       items: [
-        { title: 'Retail Execution Portal', icon: 'category' },
-        { title: 'Retail Visibility', icon: 'visibility' },
-        { title: 'Retail Intelligence', icon: 'share' },
-        { title: 'Administration', icon: 'person' },
-        { title: 'Data Extract Mgmt', icon: 'dns'},
-        { title: 'Tableau', icon: 'timeline'},
-        { title: 'Data Availability', icon: 'signal_cellular_alt'},
-        { title: 'Power BI', icon: 'insert_chart_outlined'},
-        { title: 'OSA Power', icon: 'brightness_5'},
-        { title: 'Promo Power', icon: 'spa'},
-        { title: 'Pacific', icon: 'touch_app'}
+        { title: 'Retail Execution Portal', short: "REP",
+          marginLeft: "margin-left: 3px;", icon: 'category' },
+        { title: 'Retail Visibility', short: "RV",
+          marginLeft: "margin-left: 5px;", icon: 'visibility' },
+        { title: 'Retail Intelligence', short: "RI",
+          marginLeft: "margin-left: 6px;", icon: 'share' },
+        { title: 'Administration', short: "Admin",
+          marginLeft: "margin-left: -3px;", icon: 'person' },
+        { title: 'Data Extract Mgmt', short: "DEM",
+          marginLeft: "margin-left: 1px;", icon: 'dns'},
+        { title: 'Tableau', short: "Tableau",
+          marginLeft: "margin-left: -6px;", icon: 'timeline'},
+        { title: 'Data Availability', short: "Data",
+          marginLeft: "margin-left: 1px;", icon: 'signal_cellular_alt'},
+        { title: 'Power BI', short: "Power",
+          marginLeft: "margin-left: -2px;", icon: 'insert_chart_outlined'},
+        { title: 'OSA Power', short: "OSA",
+          marginLeft: "margin-left: 1px;", icon: 'brightness_5'},
+        { title: 'Promo Power', short: "Promo",
+          marginLeft: "margin-left: -3px;", icon: 'spa'},
+        { title: 'Pacific', short: "Pacific",
+          marginLeft: "margin-left: -3px;", icon: 'touch_app'}
       ],
       // color: 'primary',
       // colors: [
@@ -144,6 +159,7 @@ export default {
 
     .vertical-menu {
       //min-height: 55px !important;
+      min-height: 51px;
 
       /*.v-list-item--dense, .v-list--dense .v-list-item {*/
         /*min-height: 45px;*/
@@ -152,68 +168,76 @@ export default {
       .icons-projects {
         //min-height: 35px !important;
       }
+
       .icon-text {
-        /*margin-top: 3px;*/
-        /*text-align: center;*/
-        /*height: auto;*/
-        /*width: auto;*/
-        /*z-index: 100;*/
-        /*color: white;*/
-        /*font-size: 10px;*/
+        font-size: 11px;
+        position: absolute !important;
+        white-space: nowrap;
+        display: initial;
+        margin-top: 21px;
+        overflow: visible !important;
+        clip: unset !important;
+        height: unset !important;
       }
-    }
   }
+}
 
-  .combo-box-domain {
-    top: 15px;
-    flex: inherit !important;
-    width: 105px;
-    right: 42px;
-  }
 
-  .text-field-search-header {
-    margin-top: 30px !important;
-    flex: inherit !important;
-    width: 150px;
-    margin-right: 81px;
-  }
 
-  .avatar-tool-bar {
-    text-align: center;
-  }
 
-  .label-name,
-  .label-logout {
-    top: 6px;
-  }
 
-  .app-settings {
-    top: 4px;
-    &:hover {
-      cursor: pointer;
-    }
-  }
-  .v-toolbar {
-    left: 56px !important;
-    box-shadow: none !important;
-    -webkit-box-shadow:  none !important;
-  }
 
-  .tool-bar-title {
-    margin-top: 15px;
-    margin-left: 24px;
-  }
 
-  .rsi-logo {
-    height: 27px;
-    margin-left: 9px;
-    margin-top: 15px;
-    margin-bottom: 6px;
-    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
+.combo-box-domain {
+  top: 15px;
+  flex: inherit !important;
+  width: 105px;
+  right: 42px;
+}
 
-    &:hover {
-      //cursor: pointer;
-    }
+.text-field-search-header {
+  margin-top: 30px !important;
+  flex: inherit !important;
+  width: 150px;
+  margin-right: 81px !important;
+}
+
+.avatar-tool-bar {
+  text-align: center;
+}
+
+.label-name,
+.label-logout {
+  top: 6px;
+}
+
+.app-settings {
+  top: 4px;
+  &:hover {
+    cursor: pointer;
   }
+}
+.v-toolbar {
+  left: 56px !important;
+  box-shadow: none !important;
+  -webkit-box-shadow:  none !important;
+}
+
+.tool-bar-title {
+  margin-top: 15px;
+  margin-left: 24px;
+}
+
+.rsi-logo {
+  height: 27px;
+  margin-left: 9px;
+  margin-top: 15px;
+  margin-bottom: 6px;
+  box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    //cursor: pointer;
+  }
+}
 
 </style>
