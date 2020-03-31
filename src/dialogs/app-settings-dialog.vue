@@ -77,49 +77,19 @@
         data() {
             return {
                 user_group_model: "Becky",
-                users: [
-                    {
-                        company: "Loblaw Companies Ltd",
-                        first_name: "Kevin",
-                        last_name: "Lunn",
-                        user_id: "KLunn-ID",
-                        role: "Retailer Admin Approver",
-                        file: "user-kevin.json",
-                        email: 'Kevin.Lunn@gmail.com',
-                        phone: "408-863-6732"
-                        /*
-                        Name:   Kevin Lunn
-                        ID:     KLunn-ID
-                        Role:   Vendor Admin Approver
-                        Mail:   becky.miller@loblow.com
-                        Phone:  (408) 540-3690
-                         */
-                    },
-                    // {
-                    //     first_name: "Lori",
-                    //     last_name: "Smash",
-                    //     user_id: "LSmash-ID",
-                    //     role: "Retailer Analyst",
-                    //     file: "user-becky.json"
-                    // },
-                    // {
-                    //     first_name: "Sam",
-                    //     last_name: "Dukes",
-                    //     user_id: "SDukes-ID",
-                    //     role: "Retailer Executer",
-                    //     file: "user-becky.json"
-                    // }
-                ],
-
+                User: {
+                    company: "Loblaw Companies Ltd",
+                    first_name: "Kevin",
+                    last_name: "Lunn",
+                    user_id: "KLunn-ID",
+                    role: "Retailer Admin Approver",
+                    file: "user-kevin.json",
+                    email: 'Kevin.Lunn@gmail.com',
+                    phone: "408-863-6732"
+                },
                 user_action: [
-                    // {
-                    //   icon: "settings",
-                    //   title: "Preferences",
-                    //   link: "/main-preferences"
-                    // },
                     {
                         icon: "supervised_user_circle",
-                        //icon: "mdi-white-balance-sunny",
                         title: "Users",
                         link: ""
                     },
@@ -157,7 +127,8 @@
             },
             user() {
                 //return this.$store.getters.getUser;
-                return this.users[0];
+                console.log('this.user: ', this.User);
+                return this.User;
             }
         },
         methods: {
@@ -190,12 +161,8 @@
         //overflow-y: hidden;
         height: 100%;
     }
-    .app-settings-dialog .v-dialog {
-        //overflow-y: hidden;
-    }
 
     .app-settings_panel {
-
         .menu-users {
             margin-left: 9px;
             margin-top: -9px;

@@ -46,9 +46,11 @@
       absolute
       dark>
       <v-list  class="py-0" >
+
         <img
           class="rsi-logo"
           :src="getImgUrl('bk/rsi-logo.jpg')" >
+
         <v-divider></v-divider>
 
         <v-list-item
@@ -57,9 +59,7 @@
           :key="item.title"
           @click="onItemClick(item)">
           <v-icon class="icons-projects" >{{ item.icon }}</v-icon>
-          <!--<span class="icon-text">{{ item.title }}</span>-->
-          <!--<span class="icon-text">{{ item.short }}</span>-->
-          <span class="icon-text" v-bind:style="item.marginLeft">{{ item.short }}</span>
+          <span class="icon-text" :style="item.marginLeft">{{ item.short }}</span>
         </v-list-item>
 
       </v-list>
@@ -155,19 +155,18 @@ export default {
 
 <style lang="scss">
   .left-vertical-bar {
-    //top: 9px !important;
+    top: 9px !important;
+
+    .v-list-item--link:before {
+      margin-bottom: -9px;
+    }
 
     .vertical-menu {
-      //min-height: 55px !important;
+      margin-top: 3px;
+      margin-left: -2px;
       min-height: 51px;
 
-      /*.v-list-item--dense, .v-list--dense .v-list-item {*/
-        /*min-height: 45px;*/
-      /*}*/
-
-      .icons-projects {
-        //min-height: 35px !important;
-      }
+      .icons-projects {}
 
       .icon-text {
         font-size: 11px;
@@ -181,12 +180,6 @@ export default {
       }
   }
 }
-
-
-
-
-
-
 
 .combo-box-domain {
   top: 15px;
