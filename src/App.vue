@@ -13,6 +13,8 @@
       outlined-->
       <v-text-field
         class="text-field-search-header"
+        v-model="search_msg"
+        @input="onChangeSearch()"
         placeholder="Search">
       </v-text-field>
 
@@ -87,6 +89,7 @@ export default {
   data() {
     return {
       user: 'Kevin Lunn',
+      search_msg: "",
       show_setting_dlg: false,
       select_domain: "Americas",
       domains: [
@@ -148,6 +151,9 @@ export default {
     onCloseUserSettingsDialog() {
       console.log("onCloseUserSettingsDialog()");
       this.show_setting_dlg = false;
+    },
+    onChangeSearch() {
+      console.log("onChangeSearch(search): ", this.search_msg);
     }
   }
 };

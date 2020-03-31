@@ -127,7 +127,7 @@
             },
             user() {
                 //return this.$store.getters.getUser;
-                console.log('this.user: ', this.User);
+                //console.log('this.user: ', this.User);
                 return this.User;
             }
         },
