@@ -133,17 +133,6 @@
         },
         methods: {
             initialize() {},
-            // async onChangeUser($event) {
-            //     let json_user = `user-${$event.toString().toLowerCase()}.json`;
-            //
-            //     console.log("app-settings-dialog.onChangeUser(json_user): ", json_user);
-            //
-            //     await this.$store.dispatch("initUser", json_user);
-            //
-            //     this.$emit("onCloseUserSettingsDialog");
-            //
-            //     EventBus.$emit(appEvents.EMULATE_USER_CHANGED);
-            // },
             onActionDlgItemClick(item) {
                 console.log("onActionDlgItemClick(item)", item);
                 this.$emit("onCloseUserSettingsDialog");

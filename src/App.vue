@@ -1,5 +1,9 @@
 <template>
   <v-app>
+
+    <!--:src="getImgUrl('bk/md-grey-1.png')"-->
+    <!--<img class="rsi-background" />-->
+
     <v-app-bar app color="white">
 
       <v-toolbar-title class="tool-bar-title headline blue--text">
@@ -73,6 +77,11 @@
       v-on:onCloseUserSettingsDialog="onCloseUserSettingsDialog">
     </app-settings-dialog>
 
+    <v-footer class="app-footer">
+      <v-spacer></v-spacer>
+      <div>&copy; {{ new Date().getFullYear() }}</div>
+    </v-footer>
+
   </v-app>
 </template>
 
@@ -93,7 +102,7 @@ export default {
       show_setting_dlg: false,
       select_domain: "Americas",
       domains: [
-        "Americas", "India"
+        "Americas", "EU", "CN", "WM", "WM EU", "WM CN"
       ],
       items: [
         { title: 'Retail Execution Portal', short: "REP",
@@ -161,7 +170,7 @@ export default {
 
 <style lang="scss">
   .left-vertical-bar {
-    top: 9px !important;
+    //top: 9px !important;
 
     .v-list-item--link:before {
       margin-bottom: -9px;
@@ -237,6 +246,24 @@ export default {
   &:hover {
     //cursor: pointer;
   }
+}
+
+.rsi-background {
+  background-image: url("assets/bk/md-grey-1.png");
+  height: 100%;
+  width: 100%;
+  position: fixed;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  top: 0;
+  left: 0;
+}
+
+.app-footer {
+  background-color: #ffffff !important;
 }
 
 </style>
