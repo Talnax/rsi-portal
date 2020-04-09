@@ -2,7 +2,7 @@
   <v-app>
 
     <!--:src="getImgUrl('bk/md-grey-1.png')"-->
-    <!--<img class="rsi-background" />-->
+    <img class="rsi-background" />
 
     <v-app-bar app color="white">
 
@@ -206,7 +206,7 @@ export default {
 .text-field-search-header {
   margin-top: 30px !important;
   flex: inherit !important;
-  width: 150px;
+  width: 240px;
   margin-right: 81px !important;
 }
 
@@ -249,7 +249,9 @@ export default {
 }
 
 .rsi-background {
-  background-image: url("assets/bk/md-grey-1.png");
+  //background-image: url("assets/bk/md-grey-1.png");
+  background-image: url("assets/material-design/md-1.jpeg");
+  //background-image: url("assets/material-design/md-1-gey.png");
   height: 100%;
   width: 100%;
   position: fixed;

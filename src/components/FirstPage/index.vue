@@ -1,124 +1,80 @@
 <template>
     <div class="first-page">
         <v-timeline class="center">
+            <!--color="cyan"-->
             <v-timeline-item
-                color="purple lighten-2"
-                fill-dot
+                color="cyan"
                 right>
                 <v-card>
-                    <v-card-title class="purple lighten-2">
-                        <v-icon
-                            dark
-                            size="42"
-                            class="mr-4">
-                            mdi-magnify
-                        </v-icon>
-                        <h2 class="display-1 white--text font-weight-light">Knowledge Hub</h2>
-                    </v-card-title>
-                    <v-container>
-                        <v-row>
-                            <v-col cols="12" md="10">
-                                Allison Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit.
-                            </v-col>
-                            <v-col
-                                    class="hidden-sm-and-down text-right"
-                                    md="2"
-                            >
-                                <v-icon size="64">mdi-calendar-text</v-icon>
-                            </v-col>
-                        </v-row>
-                    </v-container>
-                </v-card>
-
-            </v-timeline-item>
-
-            <v-timeline-item
-                color="amber lighten-1"
-                fill-dot
-                left>
-                <v-card>
-                    <v-card-title class="amber lighten-1 ">
-                        <v-icon
-                            dark
-                            size="42"
-                            class="mr-4">
-                            mdi-home-outline
-                        </v-icon>
-                        <h2 class="display-1 mr-4 white--text font-weight-light">Events</h2>
-                        <!--<v-icon-->
-                            <!--dark-->
-                            <!--size="42">-->
-                            <!--mdi-home-outline-->
-                        <!--</v-icon>-->
-                    </v-card-title>
-                    <v-container>
-                        <v-row>
-                            <v-col class="hidden-sm-and-down" md="2">
-                                <v-icon size="64">mdi-server-network</v-icon>
-                            </v-col>
-                            <v-col cols="12" md="10">
-                                Rost, no nam oblique veritus. Commune scaevola imperdiet nec ut,
-                                sed euismod convenire principes at. Est et nobis iisque percipit,
-                                an vim zril disputando voluptatibus.
-                            </v-col>
-                        </v-row>
-                    </v-container>
-                </v-card>
-            </v-timeline-item>
-
-            <!--
-            <v-timeline-item
-                color="cyan lighten-1"
-                fill-dot
-                right>
-                <v-card>
-                    <v-card-title class="cyan lighten-1">
-                        <v-icon
-                            class="mr-4"
-                            dark
-                            size="42">
-                            mdi-email-outline
-                        </v-icon>
-                        <h2 class="display-1 white--text font-weight-light">Title 3</h2>
-                    </v-card-title>
-                    <v-container>
-                        <v-row>
-                            <v-col
-                                v-for="n in 3"
-                                :key="n"
-                                cols="12"
-                                md="4">
-                                Lorem ipsum dolor sit amet, no nam oblique veritus no nam oblique.
-                            </v-col>
-                        </v-row>
-                    </v-container>
-                </v-card>
-            </v-timeline-item>
-            -->
-
-            <v-timeline-item
-                color="cyan lighten-1"
-                fill-dot
-                right>
-                <v-card>
-                    <v-card-title class="cyan lighten-1 ">
-                        <v-icon
-                            dark
-                            size="42"
-                            class="mr-4">
+                    <v-card-title class="cyan">
+                        <span class="title font-weight-light white--text ">Knowledge Hub</span>
+                        <div class="spacer"></div>
+                        <v-icon dark right >
                             mdi-account-multiple-outline
                         </v-icon>
-                        <h2 class="display-1 mr-4 white--text font-weight-light">Data Availability</h2>
-
                     </v-card-title>
                     <v-container>
                         <v-row>
                             <v-col class="hidden-sm-and-down" md="2">
-                                <v-icon size="64">mdi-server-network</v-icon>
+                                <v-icon size="33">mdi-account-multiple-outline</v-icon>
                             </v-col>
                             <v-col cols="12" md="10">
-                                Rost, no nam oblique veritus. Commune scaevola imperdiet nec ut,
+                                Knowledge Hub - scaevola imperdiet nec ut,
+                                sed euismod convenire principes at.
+                                Est et nobis iisque percipit.
+                            </v-col>
+                        </v-row>
+                    </v-container>
+                </v-card>
+            </v-timeline-item>
+
+            <!--color="amber darken-1"-->
+            <v-timeline-item
+                color="amber darken-1"
+                left>
+                <v-card>
+                    <v-card-title class="amber darken-1">
+                        <span class="title font-weight-light white--text ">Events</span>
+                        <div class="spacer"></div>
+                        <v-icon dark right >
+                            event_available
+                        </v-icon>
+                    </v-card-title>
+                    <v-container>
+                        <v-row>
+                            <v-col class="hidden-sm-and-down" md="2">
+                                <v-icon size="33">event_available</v-icon>
+                            </v-col>
+                            <v-col cols="12" md="10">
+                                Events -  Scaevola imperdiet nec ut,
                                 sed euismod convenire principes at. Est et nobis iisque percipit,
+                                an vim zril disputando.
+                            </v-col>
+                        </v-row>
+                    </v-container>
+                </v-card>
+            </v-timeline-item>
+
+            <!--color="purple"-->
+            <v-timeline-item
+                color="light-blue"
+                right>
+                <v-card>
+                    <v-card-title class="light-blue">
+                        <span class="title font-weight-light white--text ">Data Availability</span>
+                        <div class="spacer"></div>
+                        <v-icon dark right >
+                            storage
+                        </v-icon>
+                    </v-card-title>
+                    <v-container>
+                        <v-row>
+                            <v-col class="hidden-sm-and-down" md="2">
+                                <v-icon size="33">storage</v-icon>
+                            </v-col>
+                            <v-col cols="12" md="10">
+                                Data Availability - Imperdiet nec ut,
+                                sed euismod convenire principes at iisque percipit,
                                 an vim zril disputando voluptatibus.
                             </v-col>
                         </v-row>
@@ -146,11 +102,15 @@
             width: 74%;
             /*border: 3px solid green;*/
             //padding: 100px;
-            padding: 90px 6px;
+            padding: 60px 6px;
+        }
+
+        .v-card__title {
+            padding: 9px 15px !important;
         }
 
         .v-timeline:before {
-            top: 163px;
+            top: 150px;
             height: 53% !important;
             position: absolute;
         }
