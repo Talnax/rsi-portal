@@ -1,12 +1,12 @@
 <template>
     <div class="first-page">
-        <v-timeline class="center">
+        <v-timeline class="centrium">
             <!--color="cyan"-->
             <v-timeline-item
-                color="cyan"
+                color="deep-purple"
                 right>
                 <v-card>
-                    <v-card-title class="cyan">
+                    <v-card-title class="deep-purple">
                         <span class="title font-weight-light white--text ">Knowledge Hub</span>
                         <div class="spacer"></div>
                         <v-icon dark right >
@@ -21,7 +21,6 @@
                             <v-col cols="12" md="10">
                                 Knowledge Hub - scaevola imperdiet nec ut,
                                 sed euismod convenire principes at.
-                                Est et nobis iisque percipit.
                             </v-col>
                         </v-row>
                     </v-container>
@@ -30,10 +29,10 @@
 
             <!--color="amber darken-1"-->
             <v-timeline-item
-                color="amber darken-1"
+                color="cyan"
                 left>
                 <v-card>
-                    <v-card-title class="amber darken-1">
+                    <v-card-title class="cyan">
                         <span class="title font-weight-light white--text ">Events</span>
                         <div class="spacer"></div>
                         <v-icon dark right >
@@ -47,20 +46,20 @@
                             </v-col>
                             <v-col cols="12" md="10">
                                 Events -  Scaevola imperdiet nec ut,
-                                sed euismod convenire principes at. Est et nobis iisque percipit,
-                                an vim zril disputando.
+                                sed euismod convenire principes at.
+                                Est et nobis iisque percipit.
                             </v-col>
                         </v-row>
                     </v-container>
                 </v-card>
             </v-timeline-item>
 
-            <!--color="purple"-->
+            <!--light-blue-->
             <v-timeline-item
-                color="light-blue"
+                color="blue"
                 right>
                 <v-card>
-                    <v-card-title class="light-blue">
+                    <v-card-title class="blue">
                         <span class="title font-weight-light white--text ">Data Availability</span>
                         <div class="spacer"></div>
                         <v-icon dark right >
@@ -75,13 +74,12 @@
                             <v-col cols="12" md="10">
                                 Data Availability - Imperdiet nec ut,
                                 sed euismod convenire principes at iisque percipit,
-                                an vim zril disputando voluptatibus.
+                                an vim zril.
                             </v-col>
                         </v-row>
                     </v-container>
                 </v-card>
             </v-timeline-item>
-
 
         </v-timeline>
 
@@ -97,22 +95,27 @@
 <style lang="scss">
     .first-page {
 
-        .center {
+        .centrium {
             margin: auto;
-            width: 74%;
+            width: 63%;
             /*border: 3px solid green;*/
             //padding: 100px;
             padding: 60px 6px;
         }
 
         .v-card__title {
-            padding: 9px 15px !important;
+            //padding: 9px 15px !important;
+            padding: 6px 15px !important;
         }
 
         .v-timeline:before {
-            top: 150px;
+            top: 140px;
             height: 53% !important;
             position: absolute;
+        }
+
+        .v-timeline-item {
+            padding-bottom: 0 !important;
         }
     }
 

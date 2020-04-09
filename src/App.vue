@@ -43,6 +43,8 @@
 
     <!--@click="$router.push('/main-dashboard')"-->
     <!--width="270"-->
+    <!---->
+    <!--color="grey darken-1"-->
     <v-navigation-drawer
       class="left-vertical-bar"
       v-model="drawer"
@@ -249,9 +251,10 @@ export default {
 }
 
 .rsi-background {
-  //background-image: url("assets/bk/md-grey-1.png");
-  background-image: url("assets/material-design/md-1.jpeg");
+  //background-image: url("assets/material-design/md-005.jpg");
+  //background-image: url("assets/material-design/md-1.jpeg");
   //background-image: url("assets/material-design/md-1-gey.png");
+  background-image: url("assets/material-design/md-014.jpg");
   height: 100%;
   width: 100%;
   position: fixed;
