@@ -28,10 +28,12 @@
         :items="domains">
       </v-combobox>
 
+      <!--class="avatar-tool-bar blue-grey darken-2 orange&#45;&#45;text app-settings"-->
       <v-avatar
         @click="onShowUserSettingsDialog"
         size="36"
-        class="avatar-tool-bar blue-grey darken-2 orange--text app-settings">
+        class="avatar-tool-bar blue-grey darken-2 orange--text app-settings"
+      >
         <span>{{ userLetter }}</span>
       </v-avatar>
 
@@ -45,6 +47,7 @@
     <!--width="270"-->
     <!---->
     <!--color="grey darken-1"-->
+    <!--color="primary"-->
     <v-navigation-drawer
       class="left-vertical-bar"
       v-model="drawer"

@@ -5,7 +5,7 @@
             <v-timeline-item
                 color="indigo"
                 right>
-                <v-card>
+                <v-card class="card-style">
                     <v-card-title class="indigo">
                         <span class="title font-weight-light white--text ">Knowledge Hub</span>
                         <div class="spacer"></div>
@@ -31,7 +31,7 @@
             <v-timeline-item
                 color="cyan"
                 left>
-                <v-card>
+                <v-card class="card-style">
                     <v-card-title class="cyan">
                         <span class="title font-weight-light white--text ">Events</span>
                         <div class="spacer"></div>
@@ -58,7 +58,7 @@
             <v-timeline-item
                 color="blue"
                 right>
-                <v-card>
+                <v-card class="card-style">
                     <v-card-title class="blue">
                         <span class="title font-weight-light white--text ">Data Availability</span>
                         <div class="spacer"></div>
@@ -82,9 +82,9 @@
             </v-timeline-item>
 
             <div class="main-title display-3">
-                <b class="indigo--text position-1">K</b>nowledge<br><br>
-                <b class="cyan--text position-2">E</b>vents <br><br>
-                <b class="blue--text position-3">D</b>ata
+                <p><b class="indigo--text position-1">K</b>nowledge<br><br></p>
+                <p><b class="cyan--text position-2">E</b>vents <br><br></p>
+                <p><b class="blue--text position-3">D</b>ata</p>
             </div>
 
         </v-timeline>
@@ -100,6 +100,8 @@
 
 <style lang="scss">
     .first-page {
+        //text-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
+        //box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
 
         .centrium {
             margin: auto;
@@ -114,17 +116,26 @@
                 white-space: normal;
                 font-size: 3.6rem !important;
 
-                .position-1 {
-                    margin-left: -24px;
-                }
+                p {
+                    text-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
 
-                .position-2 {
+                    .position-1 {
+                        margin-left: -24px;
+                    }
 
-                }
+                    .position-2 {
 
-                .position-3 {
-                    margin-left: 24px;
+                    }
+
+                    .position-3 {
+                        margin-left: 24px;
+                    }
                 }
+            }
+
+            .card-style {
+                box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.5);
+                text-shadow: 3px 3px 9px rgba(0, 0, 0, 0.4);
             }
         }
 
