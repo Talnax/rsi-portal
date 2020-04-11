@@ -234,7 +234,7 @@ export default {
 }
 
 .tool-bar-title {
-  margin-top: 15px;
+  margin-top: 9px;
   margin-left: 24px;
 }
 

@@ -3,10 +3,10 @@
         <v-timeline class="centrium">
             <!--color="cyan"-->
             <v-timeline-item
-                color="deep-purple"
+                color="indigo"
                 right>
                 <v-card>
-                    <v-card-title class="deep-purple">
+                    <v-card-title class="indigo">
                         <span class="title font-weight-light white--text ">Knowledge Hub</span>
                         <div class="spacer"></div>
                         <v-icon dark right >
@@ -81,6 +81,12 @@
                 </v-card>
             </v-timeline-item>
 
+            <div class="main-title display-3">
+                <b class="indigo--text position-1">K</b>nowledge<br><br>
+                <b class="cyan--text position-2">E</b>vents <br><br>
+                <b class="blue--text position-3">D</b>ata
+            </div>
+
         </v-timeline>
 
     </div>
@@ -97,10 +103,29 @@
 
         .centrium {
             margin: auto;
-            width: 63%;
-            /*border: 3px solid green;*/
-            //padding: 100px;
-            padding: 60px 6px;
+            width: 51%;
+            left: 240px;
+            top: 60px;
+
+            .main-title {
+                position: absolute;
+                top: 90px;
+                left: -420px;
+                white-space: normal;
+                font-size: 3.6rem !important;
+
+                .position-1 {
+                    margin-left: -24px;
+                }
+
+                .position-2 {
+
+                }
+
+                .position-3 {
+                    margin-left: 24px;
+                }
+            }
         }
 
         .v-card__title {
@@ -109,8 +134,8 @@
         }
 
         .v-timeline:before {
-            top: 140px;
-            height: 53% !important;
+            top: 110px;
+            height: 63% !important;
             position: absolute;
         }
 
