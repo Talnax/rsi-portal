@@ -89,18 +89,72 @@
 
         </v-timeline>
 
+        <div class="communication-section">
+            <!---->
+            <div class="communication-title ">
+                <p><b class="indigo--text">C</b>ommunication</p>
+            </div>
+
+
+            <div class="communication-data">
+                <div class="communication-item">
+                    <v-list class="list-data" two-line>
+                        <template v-for="(item, index) in communication">
+                            <v-list-item
+                                :key="item.title"
+                                ripple
+                                @click="">
+                                <v-list-item-avatar>
+                                    <img :src="item.avatar">
+                                </v-list-item-avatar>
+                                <v-list-item-content>
+                                    <v-list-item-title ><b>{{ item.title }}</b></v-list-item-title>
+                                    <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
+                                </v-list-item-content>
+                                <v-spacer></v-spacer>
+                                <span>{{item.date}}, {{item.time}}</span>
+                            </v-list-item>
+                        </template>
+                    </v-list>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
     </div>
 </template>
 
 <script>
     export default {
-        name: "index"
+        name: "index",
+        data() {
+            return {
+                communication: [
+                    {
+                        title: 'Target US Data Status',
+                        subtitle: 'More...',
+                        value: '',
+                        date: '4/2/2020',
+                        time: '9-15-07 AM',
+                        avatar: 'https://picsum.photos/250/300?image=821'
+                    },
+                    { title: 'Target Data Status', subtitle: 'More...', value: '', date: '4/2/2020', time: '6-15-15 AM', avatar: 'https://picsum.photos/250/300?image=821'},
+                    { title: 'Calimax Data Status', subtitle: 'More...', value: '', date: '4/2/2020', time: '4-05-15 AM', avatar: 'https://picsum.photos/250/300?image=821'},
+                    { title: 'Sams CN SSC Data Status', subtitle: 'More...', value: '', date: '4/2/2020', time: '3-40-15 AM', avatar: 'https://picsum.photos/250/300?image=821'},
+                    { title: 'Wallmart Category CN SSC Data Status -Resolved-', subtitle: 'More...', value: '', date: '4/2/2020', time: '3-10-15 AM', avatar: 'https://picsum.photos/250/300?image=821'},
+                    { title: 'Wallmart US Data Status -Resolved-', subtitle: 'More...', value: '', date: '4/2/2020', time: '2-25-16 AM', avatar: 'https://picsum.photos/250/300?image=821'},
+                ]
+            }
+        }
     }
 </script>
 
 <style lang="scss">
     .first-page {
-        //text-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
+        //text-shadow: 3px 3px 9px rgba(0, 0, 0, 0.6);
         //box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
 
         .centrium {
@@ -117,15 +171,13 @@
                 font-size: 3.6rem !important;
 
                 p {
-                    text-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
+                    text-shadow: 3px 3px 11px rgba(0, 0, 0, 0.3);
 
                     .position-1 {
                         margin-left: -24px;
                     }
 
-                    .position-2 {
-
-                    }
+                    .position-2 {}
 
                     .position-3 {
                         margin-left: 24px;
@@ -134,8 +186,8 @@
             }
 
             .card-style {
-                box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.5);
-                text-shadow: 3px 3px 9px rgba(0, 0, 0, 0.4);
+                box-shadow: 3px 3px 11px rgba(0, 0, 0, 0.3);
+                //text-shadow: 3px 3px 9px rgba(0, 0, 0, 0.4);
             }
         }
 
@@ -152,6 +204,45 @@
 
         .v-timeline-item {
             padding-bottom: 0 !important;
+        }
+    }
+
+    .first-page {
+        .communication-section {
+            //margin: auto;
+            width: 90%;
+            margin-left: 220px;
+            margin-top: 180px;
+            margin-bottom: 90px;
+
+            .communication-title {
+                /*font-weight: 300;*/
+                /*white-space: normal;*/
+                /*font-size: 3.6rem !important;*/
+
+                //margin: auto;
+                white-space: normal;
+                font-weight: 300;
+                font-size: 3.3rem !important;
+                position: absolute;
+                //right: 180px;
+                right: 150px;
+                margin-top: 150px;
+            }
+
+            .communication-data {
+
+
+                .communication-item {
+                    //margin: auto;
+                    width: 50%;
+                    //margin-left: -10px;
+
+                    .list-data {
+                        background: transparent;
+                    }
+                }
+            }
         }
     }
 
