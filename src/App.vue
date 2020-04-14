@@ -202,14 +202,14 @@ export default {
 }
 
 .combo-box-domain {
-  top: 15px;
+  top: 9px;
   flex: inherit !important;
   width: 105px;
   right: 42px;
 }
 
 .text-field-search-header {
-  margin-top: 30px !important;
+  margin-top: 16px !important;
   flex: inherit !important;
   width: 240px;
   margin-right: 81px !important;
@@ -217,6 +217,7 @@ export default {
 
 .avatar-tool-bar {
   text-align: center;
+  margin-top: -9px;
 }
 
 .label-name,
@@ -237,7 +238,7 @@ export default {
 }
 
 .tool-bar-title {
-  margin-top: 9px;
+  //margin-top: 9px;
   margin-left: 24px;
 }
 

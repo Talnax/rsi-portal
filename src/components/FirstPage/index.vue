@@ -144,54 +144,55 @@
         data() {
             return {
                 communication: [
+                    // avatar: 'https://picsum.photos/250/300?image=821'
                     {
                         title: 'Target US Data Status',
                         subtitle: 'More...',
                         value: '',
                         date: '4/2/2020',
-                        time: '9-15-07 AM',
-                        avatar: 'https://picsum.photos/250/300?image=821'
+                        time: '9:15:07 AM',
+                        avatar: 'icons/target.png'
                     },
                     {
                         title: 'Target Data Status',
                         subtitle: 'More...',
                         value: '',
                         date: '4/2/2020',
-                        time: '6-15-15 AM',
-                        avatar: 'https://picsum.photos/250/300?image=821'
+                        time: '6:15:15 AM',
+                        avatar: 'icons/target.png'
                     },
                     {
                         title: 'Calimax Data Status',
                         subtitle: 'More...',
                         value: '',
                         date: '4/2/2020',
-                        time: '4-05-15 AM',
-                        avatar: 'https://picsum.photos/250/300?image=821'
+                        time: '4:05:15 AM',
+                        avatar: 'icons/calimax.jpg'
                     },
                     {
                         title: 'Sams CN SSC Data Status',
                         subtitle: 'More...',
                         value: '',
                         date: '4/2/2020',
-                        time: '3-40-15 AM',
-                        avatar: 'https://picsum.photos/250/300?image=821'
+                        time: '3:40:15 AM',
+                        avatar: 'icons/sams.png',
                     },
                     {
                         title: 'Wallmart Category CN SSC Data Status -Resolved-',
                         subtitle: 'More...',
                         value: '',
                         date: '4/2/2020',
-                        time: '3-10-15 AM',
+                        time: '3:10:15 AM',
                         avatar: 'icons/walmart.png'
-                        //avatar: 'https://picsum.photos/250/300?image=821'
                     },
                     {
                         title: 'Wallmart US Data Status -Resolved-',
                         subtitle: 'More...',
                         value: '',
                         date: '4/2/2020',
-                        time: '2-25-16 AM',
-                        avatar: 'https://picsum.photos/250/300?image=821'},
+                        time: '2:25:16 AM',
+                        avatar: 'icons/walmart.png'
+                    }
                 ]
             }
         }
