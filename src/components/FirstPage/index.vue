@@ -93,7 +93,8 @@
 
         <div class="communication-section">
             <div class="communication-title ">
-                <p><b class="indigo--text">C</b>ommunication</p>
+                <!--<p><b class="cyan--text">C</b>ommunication</p>-->
+                <p class="cyan--text"><b class="black--text">C</b>ommunication</p>
             </div>
 
             <div class="communication-data">
@@ -105,7 +106,13 @@
                                 ripple
                                 @click="">
                                 <v-list-item-avatar>
-                                    <img :src="item.avatar">
+                                    <!--<img v-bind:src="item.avatar">-->
+                                    <!--<img v-if="item.avatar.filter(x => x.includes('https'))"-->
+                                    <img v-if="item.avatar.includes('icons')"
+                                         :src="getImgUrl(item.avatar)">
+                                    <img v-else :src='item.avatar' >
+                                    <!--:src="getImgUrl('icons/rsi-logo.jpg')">-->
+                                    <!--:src="getImgUrl('bk/rsi-logo.jpg')"-->
                                 </v-list-item-avatar>
                                 <v-list-item-content>
                                     <v-list-item-title ><b>{{ item.title }}</b></v-list-item-title>
@@ -114,13 +121,12 @@
                                 <v-spacer></v-spacer>
                                 <span>{{item.date}}, {{item.time}}</span>
                             </v-list-item>
+                            <v-divider :key="index" inset></v-divider>
                         </template>
                     </v-list>
 
                 </div>
-
             </div>
-
 
         </div>
 
@@ -130,8 +136,11 @@
 </template>
 
 <script>
+    import loadImageMixin from "@/mixins/loadImageMixin";
+
     export default {
         name: "index",
+        mixins: [loadImageMixin],
         data() {
             return {
                 communication: [
@@ -143,11 +152,46 @@
                         time: '9-15-07 AM',
                         avatar: 'https://picsum.photos/250/300?image=821'
                     },
-                    { title: 'Target Data Status', subtitle: 'More...', value: '', date: '4/2/2020', time: '6-15-15 AM', avatar: 'https://picsum.photos/250/300?image=821'},
-                    { title: 'Calimax Data Status', subtitle: 'More...', value: '', date: '4/2/2020', time: '4-05-15 AM', avatar: 'https://picsum.photos/250/300?image=821'},
-                    { title: 'Sams CN SSC Data Status', subtitle: 'More...', value: '', date: '4/2/2020', time: '3-40-15 AM', avatar: 'https://picsum.photos/250/300?image=821'},
-                    { title: 'Wallmart Category CN SSC Data Status -Resolved-', subtitle: 'More...', value: '', date: '4/2/2020', time: '3-10-15 AM', avatar: 'https://picsum.photos/250/300?image=821'},
-                    { title: 'Wallmart US Data Status -Resolved-', subtitle: 'More...', value: '', date: '4/2/2020', time: '2-25-16 AM', avatar: 'https://picsum.photos/250/300?image=821'},
+                    {
+                        title: 'Target Data Status',
+                        subtitle: 'More...',
+                        value: '',
+                        date: '4/2/2020',
+                        time: '6-15-15 AM',
+                        avatar: 'https://picsum.photos/250/300?image=821'
+                    },
+                    {
+                        title: 'Calimax Data Status',
+                        subtitle: 'More...',
+                        value: '',
+                        date: '4/2/2020',
+                        time: '4-05-15 AM',
+                        avatar: 'https://picsum.photos/250/300?image=821'
+                    },
+                    {
+                        title: 'Sams CN SSC Data Status',
+                        subtitle: 'More...',
+                        value: '',
+                        date: '4/2/2020',
+                        time: '3-40-15 AM',
+                        avatar: 'https://picsum.photos/250/300?image=821'
+                    },
+                    {
+                        title: 'Wallmart Category CN SSC Data Status -Resolved-',
+                        subtitle: 'More...',
+                        value: '',
+                        date: '4/2/2020',
+                        time: '3-10-15 AM',
+                        avatar: 'icons/walmart.png'
+                        //avatar: 'https://picsum.photos/250/300?image=821'
+                    },
+                    {
+                        title: 'Wallmart US Data Status -Resolved-',
+                        subtitle: 'More...',
+                        value: '',
+                        date: '4/2/2020',
+                        time: '2-25-16 AM',
+                        avatar: 'https://picsum.photos/250/300?image=821'},
                 ]
             }
         }
