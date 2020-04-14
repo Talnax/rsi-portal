@@ -89,12 +89,12 @@
 
         </v-timeline>
 
+        <hr class="divider">
+
         <div class="communication-section">
-            <!---->
             <div class="communication-title ">
                 <p><b class="indigo--text">C</b>ommunication</p>
             </div>
-
 
             <div class="communication-data">
                 <div class="communication-item">
@@ -123,6 +123,8 @@
 
 
         </div>
+
+        <hr class="divider">
 
     </div>
 </template>
@@ -208,35 +210,32 @@
     }
 
     .first-page {
+        .divider {
+            margin-top: 150px;
+        }
+    }
+
+    .first-page {
         .communication-section {
             //margin: auto;
             width: 90%;
             margin-left: 220px;
-            margin-top: 180px;
+            margin-top: 90px;
             margin-bottom: 90px;
 
             .communication-title {
-                /*font-weight: 300;*/
-                /*white-space: normal;*/
-                /*font-size: 3.6rem !important;*/
-
-                //margin: auto;
-                white-space: normal;
-                font-weight: 300;
-                font-size: 3.3rem !important;
                 position: absolute;
-                //right: 180px;
-                right: 150px;
-                margin-top: 150px;
+                left: 210px;
+                font-size: 3.0rem !important;
+                margin-top: 180px;
+                font-weight: 300;
             }
 
             .communication-data {
 
-
                 .communication-item {
-                    //margin: auto;
                     width: 50%;
-                    //margin-left: -10px;
+                    margin-left: 33% !important;
 
                     .list-data {
                         background: transparent;
