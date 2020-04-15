@@ -77,7 +77,7 @@
         data() {
             return {
                 user_group_model: "Becky",
-                User: {
+                User:  {
                     company: "Loblaw Companies Ltd",
                     first_name: "Kevin",
                     last_name: "Lunn",

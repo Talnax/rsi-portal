@@ -103,7 +103,7 @@
                     <v-list-item
                         :key="item.title"
                         ripple
-                        @click="">
+                        @click="onListCommunicationClick(item)">
                         <v-list-item-avatar>
                             <img v-if="item.avatar.includes('icons')"
                                  :src="getImgUrl(item.avatar)">
@@ -124,24 +124,36 @@
                     <v-divider  inset></v-divider>
                 </template>
             </v-list>
-
         </div>
 
         <hr class="divider">
+
+        <communication-more-dialog
+            :show_dlg="show_more_dlg"
+            :show_item="show_more_item"
+            v-on:onCloseCommunicationMoreDialog="onCloseCommunicationMoreDialog">
+        </communication-more-dialog>
 
     </div>
 </template>
 
 <script>
     import loadImageMixin from "@/mixins/loadImageMixin";
+    import CommunicationMoreDialog from "@/dialogs/communication-more-dialog"
 
     export default {
         name: "index",
         mixins: [loadImageMixin],
+        components: {
+            "communication-more-dialog": CommunicationMoreDialog
+        },
         data() {
             return {
                 headers: [],
                 rows: [],
+
+                show_more_dlg: false,
+                show_more_item: null,
 
                 desserts: [
                     {
@@ -222,6 +234,25 @@
         },
         mounted() {
         },
+        methods: {
+            onListCommunicationClick(item) {
+                console.log('onListCommunicationClick(item): ', item );
+                this.onShowCommunicationMoreDialog(item);
+            },
+
+            onShowCommunicationMoreDialog(item) {
+                console.log("onShowCommunicationMoreDialog()");
+                console.clear();
+                this.show_more_item = item;
+                this.show_more_dlg = true;
+            },
+
+            onCloseCommunicationMoreDialog() {
+                console.log("onCloseCommunicationMoreDialog()");
+                this.show_more_item = null;
+                this.show_more_dlg = false;
+            },
+        }
     }
 </script>
 
