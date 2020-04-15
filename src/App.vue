@@ -176,6 +176,7 @@ export default {
 <style lang="scss">
   .left-vertical-bar {
     //top: 9px !important;
+    position: fixed !important;
 
     .v-list-item--link:before {
       margin-bottom: -9px;

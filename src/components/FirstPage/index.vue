@@ -93,40 +93,37 @@
 
         <div class="communication-section">
             <div class="communication-title ">
-                <!--<p><b class="cyan--text">C</b>ommunication</p>-->
                 <p class="cyan--text"><b class="black--text">C</b>ommunication</p>
             </div>
 
-            <div class="communication-data">
-                <div class="communication-item">
-                    <v-list class="list-data" two-line>
-                        <template v-for="(item, index) in communication">
-                            <v-list-item
-                                :key="item.title"
-                                ripple
-                                @click="">
-                                <v-list-item-avatar>
-                                    <!--<img v-bind:src="item.avatar">-->
-                                    <!--<img v-if="item.avatar.filter(x => x.includes('https'))"-->
-                                    <img v-if="item.avatar.includes('icons')"
-                                         :src="getImgUrl(item.avatar)">
-                                    <img v-else :src='item.avatar' >
-                                    <!--:src="getImgUrl('icons/rsi-logo.jpg')">-->
-                                    <!--:src="getImgUrl('bk/rsi-logo.jpg')"-->
-                                </v-list-item-avatar>
-                                <v-list-item-content>
-                                    <v-list-item-title ><b>{{ item.title }}</b></v-list-item-title>
-                                    <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
-                                </v-list-item-content>
-                                <v-spacer></v-spacer>
-                                <span>{{item.date}}, {{item.time}}</span>
-                            </v-list-item>
-                            <v-divider :key="index" inset></v-divider>
-                        </template>
-                    </v-list>
+            <br><br><br>
 
-                </div>
-            </div>
+            <v-list class="list-data" two-line>
+                <template v-for="(item, index) in communication">
+                    <v-list-item
+                        :key="item.title"
+                        ripple
+                        @click="">
+                        <v-list-item-avatar>
+                            <img v-if="item.avatar.includes('icons')"
+                                 :src="getImgUrl(item.avatar)">
+                            <img v-else :src='item.avatar' >
+                        </v-list-item-avatar>
+                        <v-list-item-content>
+                            <v-list-item-title ><b>{{ item.title }}</b></v-list-item-title>
+                            <!--<v-list-item-subtitle v-html="item.date"></v-list-item-subtitle>-->
+                        </v-list-item-content>
+                        <v-list-item-content>
+                            <v-list-item-subtitle style="margin-left: 90px;">{{ item.date}}</v-list-item-subtitle>
+                        </v-list-item-content>
+                        <v-spacer></v-spacer>
+                        <!--<span>{{item.date}}, {{item.time}}</span>-->
+                        <v-chip style="margin-right: 90px;">More...</v-chip>
+                        <span>{{item.time}}</span>
+                    </v-list-item>
+                    <v-divider  inset></v-divider>
+                </template>
+            </v-list>
 
         </div>
 
@@ -143,11 +140,38 @@
         mixins: [loadImageMixin],
         data() {
             return {
+                headers: [],
+                rows: [],
+
+                desserts: [
+                    {
+                        id: 1,
+                        name: 'Target US',
+                        date: "4/2/2020",
+                        time: "9:15:06 AM",
+                        icon: " "
+                    },
+                    {
+                        id: 2,
+                        name: 'Target',
+                        date: "4/2/2020",
+                        time: "9:15:06 AM",
+                        icon: " "
+                    },
+                    {
+                        id: 3,
+                        name: 'Calimax',
+                        date: "4/2/2020",
+                        time: "9:15:06 AM",
+                        icon: " "
+                    }
+                ],
+
                 communication: [
                     // avatar: 'https://picsum.photos/250/300?image=821'
                     {
                         title: 'Target US Data Status',
-                        subtitle: 'More...',
+                        subtitle: '4/2/2020',
                         value: '',
                         date: '4/2/2020',
                         time: '9:15:07 AM',
@@ -195,7 +219,9 @@
                     }
                 ]
             }
-        }
+        },
+        mounted() {
+        },
     }
 </script>
 
@@ -262,32 +288,51 @@
 
     .first-page {
         .communication-section {
-            //margin: auto;
-            width: 90%;
-            margin-left: 220px;
             margin-top: 90px;
-            margin-bottom: 90px;
 
             .communication-title {
                 position: absolute;
-                left: 210px;
                 font-size: 3.0rem !important;
-                margin-top: 180px;
                 font-weight: 300;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .list-data {
+                width: 50%;
+                background: transparent;
+                margin-left: 24% !important;
+                //margin: auto;
             }
 
             .communication-data {
+                width: 60%;
+                margin-left: 15% !important;
 
-                .communication-item {
-                    width: 50%;
-                    margin-left: 33% !important;
+                .list-data {
+                    background: transparent;
+                }
+            }
+        }
+    }
 
-                    .list-data {
-                        background: transparent;
+    /*
+    .first-page {
+        .communication-section {
+            .communication-table {
+
+                .dimension_measure-table {
+                    width: 40%;
+                    margin: auto;
+                    background-color: transparent !important;
+
+                    .table-header {
+                        background-color: transparent !important;
                     }
                 }
             }
         }
     }
+    */
 
 </style>
