@@ -129,8 +129,9 @@
         <hr class="divider">
 
         <communication-more-dialog
+            v-if="show_more_dlg==true"
             :show_dlg="show_more_dlg"
-            :show_item="show_more_item"
+            :item="show_more_item"
             v-on:onCloseCommunicationMoreDialog="onCloseCommunicationMoreDialog">
         </communication-more-dialog>
 
@@ -241,8 +242,8 @@
             },
 
             onShowCommunicationMoreDialog(item) {
-                console.log("onShowCommunicationMoreDialog()");
                 console.clear();
+                console.log("onShowCommunicationMoreDialog(item): ", item );
                 this.show_more_item = item;
                 this.show_more_dlg = true;
             },

@@ -4,23 +4,43 @@
 
             <v-dialog
                 v-model="show_dlg"
-                width="500">
+                width="600">
 
                 <v-card>
-                    <v-card-title
-                        class="headline grey lighten-2"
-                        primary-title>
-                        Privacy Policy
+
+                    <v-card-title class="headline primary white--text">
+                        <v-icon style="margin-right: 10px;">event_note</v-icon>
+                        {{this.baseItem.title}}
                     </v-card-title>
 
-                    <v-card-text>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum.
+                    <v-card-text><br>
+                        Scheduled System Maintenance 4/14/2020,  9:50:17 AM <br><br>
+
+                        <b>Tuesday, April 14, 2020 9:29:40 AM EST</b>
+                        Please note that <b>RSi</b> will be conducting routine system maintenance on Thursday, April 23,
+                        2020 at 4:00PM EST for 4 hours. <br>
+                        <b>RSi</b> application will be available, but FTP will be inaccessible
+                        and reports will not be delivered to FTP site while maintenance is being performed for the below:<br><br>
+
+                        If you have any concerns or require access to RSi;s solutions during this scheduled time,
+                        please notify immediately so that we can reschedule accordingly. <br><br>
+
+                        <b>Start time:</b> <br>
+                        Providence: 23/Apr/2020 04:00 PM EDT  <br>
+                        Bentonville: 23/Apr/2020 03:00 PM CDT <br>
+                        Mountain View: 23/Apr/2020 01:00 PM PDT <br>
+                        Shanghai: 24/Apr/2020 04:00 AM CST <br>
+                        Pune: 24/Apr/2020 01:30 AM IST <br>
+                        London: 23/Apr/2020 09:00 PM BST <br><br>
+
+                        <b>Duration:</b> 4 hours
+
+                        <br><br>
+                        If you have any questions or concerns about the maintenance performed, <br>
+                        please submit request or send us a Chat via the <b>Knowledge Hub</b> or email us<br>
+                         at <b>support@retailsolutions.com</b> <br><br>
+
+                        We appreciate your patience during tis time.
                     </v-card-text>
 
                     <v-divider></v-divider>
@@ -31,7 +51,7 @@
                             color="primary"
                             text
                             @click="onCloseDlg">
-                            I accept
+                            Close
                         </v-btn>
                     </v-card-actions>
                 </v-card>
@@ -45,15 +65,28 @@
 <script>
     export default {
         name: "communication-more-dialog",
-        props: ["show_dlg", "show_item"],
+        props: ["show_dlg", "item"],
         data() {
             return {
-                //dialog: false
+
+            }
+        },
+        computed: {
+            baseItem() {
+                if(this.isObject(this.item )) {
+                    return this.item;
+                }
+                else {
+                    return null;
+                }
             }
         },
         methods: {
+            isObject(o) {
+                return o !== null && typeof o === 'object' && Array.isArray(o) === false;
+            },
             onCloseDlg() {
-                console.log("communication-more-dialog.onCloseDlg()");
+                //console.log("communication-more-dialog.onCloseDlg(isObject(item)): ", this.isObject(this.item ));
                 this.$emit("onCloseCommunicationMoreDialog");
             }
         }
