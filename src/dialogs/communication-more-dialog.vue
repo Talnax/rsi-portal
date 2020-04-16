@@ -4,13 +4,14 @@
 
             <v-dialog
                 v-model="show_dlg"
-                width="600">
+                width="690">
 
                 <v-card>
 
-                    <v-card-title class="headline primary white--text">
-                        <v-icon style="margin-right: 10px;">event_note</v-icon>
+                    <v-card-title class="headline primary white--text title-card">
+                        <v-icon style="margin-right: 15px;">event_note</v-icon>
                         {{this.baseItem.title}}
+                        <!--{{this.baseTitle}}-->
                     </v-card-title>
 
                     <v-card-text><br>
@@ -67,18 +68,16 @@
         name: "communication-more-dialog",
         props: ["show_dlg", "item"],
         data() {
-            return {
-
-            }
+            return {}
         },
         computed: {
             baseItem() {
-                if(this.isObject(this.item )) {
-                    return this.item;
-                }
-                else {
-                    return null;
-                }
+                let base = this.isObject(this.item ) !== null ? this.item : null;
+                return base;
+            },
+            baseTitle() {
+                //var index = this.baseItem.title.search("Data Status");
+                return this.baseItem.title;
             }
         },
         methods: {
@@ -86,7 +85,6 @@
                 return o !== null && typeof o === 'object' && Array.isArray(o) === false;
             },
             onCloseDlg() {
-                //console.log("communication-more-dialog.onCloseDlg(isObject(item)): ", this.isObject(this.item ));
                 this.$emit("onCloseCommunicationMoreDialog");
             }
         }
@@ -95,5 +93,13 @@
 
 <style lang="scss">
     .communication-more-dialog {}
+
+    .title-card {
+        font-weight: 300 !important;
+    }
+
+    .v-application .headline {
+        font-size: 1.2rem !important;
+    }
 
 </style>

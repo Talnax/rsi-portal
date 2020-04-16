@@ -17,6 +17,7 @@
                         <v-row>
                             <v-col class="hidden-sm-and-down" md="2">
                                 <v-icon size="33">mdi-account-multiple-outline</v-icon>
+                                <!--<img style="width: 36px;" :src="getImgUrl('images/knowledge.png')">-->
                             </v-col>
                             <v-col cols="12" md="10">
                                 Knowledge Hub - scaevola imperdiet nec ut,
@@ -43,6 +44,7 @@
                         <v-row>
                             <v-col class="hidden-sm-and-down" md="2">
                                 <v-icon size="33">event_available</v-icon>
+                                <!--<img style="width: 36px;" :src="getImgUrl('images/events.png')">-->
                             </v-col>
                             <v-col cols="12" md="10">
                                 Events -  Scaevola imperdiet nec ut,
@@ -70,6 +72,7 @@
                         <v-row>
                             <v-col class="hidden-sm-and-down" md="2">
                                 <v-icon size="33">storage</v-icon>
+                                <!--<img style="width: 36px;" :src="getImgUrl('images/data.png')">-->
                             </v-col>
                             <v-col cols="12" md="10">
                                 Data Availability - Imperdiet nec ut,
@@ -324,7 +327,8 @@
 
             .communication-title {
                 position: absolute;
-                font-size: 3.0rem !important;
+                //font-size: 3.0rem !important;
+                font-size: 3.6rem !important;
                 font-weight: 300;
                 left: 50%;
                 transform: translate(-50%, -50%);
