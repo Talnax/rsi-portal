@@ -27,7 +27,7 @@
                                 <!--<img style="width: 36px;" :src="getImgUrl('images/knowledge.png')">-->
                             </v-col>
                             <v-col cols="12" md="10">
-                                Knowledge Hub - scaevola imperdiet nec ut,
+                                <b>Knowledge Hub</b> - scaevola imperdiet nec ut,
                                 sed euismod convenire principes at.
                             </v-col>
                         </v-row>
@@ -60,7 +60,7 @@
                                 <!--<img style="width: 36px;" :src="getImgUrl('images/events.png')">-->
                             </v-col>
                             <v-col cols="12" md="10">
-                                Events -  Scaevola imperdiet nec ut,
+                                <b>Events</b> -  Scaevola imperdiet nec ut,
                                 sed euismod convenire principes nobis iisque
                             </v-col>
                         </v-row>
@@ -93,7 +93,7 @@
                                 <!--<img style="width: 36px;" :src="getImgUrl('images/data.png')">-->
                             </v-col>
                             <v-col cols="12" md="10">
-                                Data Availability - Imperdiet nec ut,
+                                <b>Data Availability</b> - Imperdiet nec ut,
                                 sed euismod convenire principes at iisque.
                             </v-col>
                         </v-row>
@@ -116,7 +116,8 @@
 
         <div class="communication-section">
             <div class="communication-title ">
-                <p class="cyan--text"><b class="black--text">C</b>ommunication</p>
+                <!--<p class="cyan--text"><b class="black--text">C</b>ommunication</p>-->
+                <p class="cyan--text"><b>C</b>ommunication</p>
             </div>
 
             <br><br><br>
@@ -152,7 +153,7 @@
         <hr class="divider">
 
         <communication-more-dialog
-            v-if="show_more_dlg==true"
+            v-if="show_more_dlg"
             :show_dlg="show_more_dlg"
             :item="show_more_item"
             v-on:onCloseCommunicationMoreDialog="onCloseCommunicationMoreDialog">
@@ -179,6 +180,7 @@
                 show_more_dlg: false,
                 show_more_item: null,
 
+                /*
                 desserts: [
                     {
                         id: 1,
@@ -202,6 +204,7 @@
                         icon: " "
                     }
                 ],
+                */
 
                 communication: [
                     // avatar: 'https://picsum.photos/250/300?image=821'
