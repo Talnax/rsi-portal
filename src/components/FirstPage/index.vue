@@ -5,7 +5,13 @@
             <v-timeline-item
                 color="indigo"
                 right>
+                <!--src="https://cdn.vuetifyjs.com/images/cards/cooking.png"-->
                 <v-card class="card-style">
+                    <v-img
+                        height="150"
+                        :src="getImgUrl('imgs/knowledge-7.jpeg')"
+                    ></v-img>
+                    <!--
                     <v-card-title class="indigo">
                         <span class="title font-weight-light white--text ">Knowledge Hub</span>
                         <div class="spacer"></div>
@@ -13,6 +19,7 @@
                             mdi-account-multiple-outline
                         </v-icon>
                     </v-card-title>
+                    -->
                     <v-container>
                         <v-row>
                             <v-col class="hidden-sm-and-down" md="2">
@@ -33,6 +40,11 @@
                 color="cyan"
                 left>
                 <v-card class="card-style">
+                    <v-img
+                        height="150"
+                        :src="getImgUrl('imgs/events-1.jpg')"
+                    ></v-img>
+                    <!--
                     <v-card-title class="cyan">
                         <span class="title font-weight-light white--text ">Events</span>
                         <div class="spacer"></div>
@@ -40,6 +52,7 @@
                             event_available
                         </v-icon>
                     </v-card-title>
+                    -->
                     <v-container>
                         <v-row>
                             <v-col class="hidden-sm-and-down" md="2">
@@ -48,8 +61,7 @@
                             </v-col>
                             <v-col cols="12" md="10">
                                 Events -  Scaevola imperdiet nec ut,
-                                sed euismod convenire principes at.
-                                Est et nobis iisque percipit.
+                                sed euismod convenire principes nobis iisque
                             </v-col>
                         </v-row>
                     </v-container>
@@ -61,6 +73,11 @@
                 color="blue"
                 right>
                 <v-card class="card-style">
+                    <v-img
+                        height="150"
+                        :src="getImgUrl('imgs/data-availability-3.jpg')"
+                    ></v-img>
+                    <!--
                     <v-card-title class="blue">
                         <span class="title font-weight-light white--text ">Data Availability</span>
                         <div class="spacer"></div>
@@ -68,6 +85,7 @@
                             storage
                         </v-icon>
                     </v-card-title>
+                    -->
                     <v-container>
                         <v-row>
                             <v-col class="hidden-sm-and-down" md="2">
@@ -76,8 +94,7 @@
                             </v-col>
                             <v-col cols="12" md="10">
                                 Data Availability - Imperdiet nec ut,
-                                sed euismod convenire principes at iisque percipit,
-                                an vim zril.
+                                sed euismod convenire principes at iisque.
                             </v-col>
                         </v-row>
                     </v-container>
@@ -85,9 +102,12 @@
             </v-timeline-item>
 
             <div class="main-title display-3">
-                <p><b class="indigo--text position-1">K</b>nowledge<br><br></p>
-                <p><b class="cyan--text position-2">E</b>vents <br><br></p>
-                <p><b class="blue--text position-3">D</b>ata</p>
+                <!--<p><b class="indigo--text position-1">K</b>nowledge<br><br></p>-->
+                <p class="indigo--text position1"><b class="indigo--text">K</b>nowledge<br></p>
+                <!--<p><b class="cyan--text position-2">E</b>vents <br><br></p>-->
+                <p class="cyan--text position2"><b class="cyan--text">E</b>vents<br></p>
+                <!--<p><b class="blue--text position-3">D</b>ata</p>-->
+                <p class="blue--text position3"><b class="blue--text">D</b>ata</p>
             </div>
 
         </v-timeline>
@@ -267,29 +287,29 @@
 
         .centrium {
             margin: auto;
-            width: 51%;
+            width: 54%;
             left: 240px;
             top: 60px;
 
             .main-title {
                 position: absolute;
-                top: 90px;
-                left: -420px;
+                top: 270px;
+                left: -450px;
                 white-space: normal;
                 font-size: 3.6rem !important;
 
                 p {
                     text-shadow: 3px 3px 11px rgba(0, 0, 0, 0.3);
+                }
 
-                    .position-1 {
-                        margin-left: -24px;
-                    }
+                .position1 {
+                    margin-left: -24px;
+                }
 
-                    .position-2 {}
+                .position2 {}
 
-                    .position-3 {
-                        margin-left: 24px;
-                    }
+                .position3 {
+                    margin-left: 24px;
                 }
             }
 
@@ -305,9 +325,9 @@
         }
 
         .v-timeline:before {
-            top: 110px;
-            height: 63% !important;
             position: absolute;
+            top: 141px;
+            height: 68% !important;
         }
 
         .v-timeline-item {
