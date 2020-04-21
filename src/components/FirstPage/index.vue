@@ -300,7 +300,7 @@
 
         .centrium {
             .timeline-item-title {
-                font-size: 3.3rem !important;
+                font-size: 2.7rem !important;
             }
         }
 

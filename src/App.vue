@@ -4,7 +4,7 @@
     <!--:src="getImgUrl('bk/md-grey-1.png')"-->
     <img class="rsi-background" />
 
-    <v-app-bar app color="white">
+    <v-app-bar app color="grey lighten-3">
 
       <v-toolbar-title class="tool-bar-title headline blue--text">
         Retail Execution Portal
@@ -82,9 +82,9 @@
       v-on:onCloseUserSettingsDialog="onCloseUserSettingsDialog">
     </app-settings-dialog>
 
-    <v-footer class="app-footer">
+    <v-footer class="app-footer" color="grey lighten-3">
       <v-spacer></v-spacer>
-      <div>&copy; {{ new Date().getFullYear() }}</div>
+      <div>RSi &copy; {{ new Date().getFullYear() }}</div>
     </v-footer>
 
   </v-app>
@@ -274,6 +274,9 @@ export default {
 
 .app-footer {
   background-color: #ffffff !important;
+  position: fixed !important;
+  bottom: 0;
+  width: 100%;
 }
 
 </style>
