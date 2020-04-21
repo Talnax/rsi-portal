@@ -3,23 +3,31 @@
         <v-timeline class="centrium">
             <!--color="cyan"-->
             <v-timeline-item
-                color="indigo"
-                right>
-                <template v-slot:opposite>
-                    <span class="timeline-item-title indigo--text"><b class="indigo--text">K</b>nowledge Hub</span>
-                </template>
+                    color="indigo"
+                    right>
+                <!--src="https://cdn.vuetifyjs.com/images/cards/cooking.png"-->
                 <v-card class="card-style">
                     <v-img
-                        height="150"
-                        :src="getImgUrl('imgs/knowledge-7.jpeg')"
+                            height="150"
+                            :src="getImgUrl('imgs/knowledge-7.jpeg')"
                     ></v-img>
+                    <!--
+                    <v-card-title class="indigo">
+                        <span class="title font-weight-light white--text ">Knowledge Hub</span>
+                        <div class="spacer"></div>
+                        <v-icon dark right >
+                            mdi-account-multiple-outline
+                        </v-icon>
+                    </v-card-title>
+                    -->
                     <v-container>
                         <v-row>
                             <v-col class="hidden-sm-and-down" md="2">
                                 <v-icon size="33">mdi-account-multiple-outline</v-icon>
+                                <!--<img style="width: 36px;" :src="getImgUrl('images/knowledge.png')">-->
                             </v-col>
                             <v-col cols="12" md="10">
-                                Scaevola imperdiet nec ut,
+                                <b>Knowledge Hub</b> - scaevola imperdiet nec ut,
                                 sed euismod convenire principes at.
                             </v-col>
                         </v-row>
@@ -27,24 +35,32 @@
                 </v-card>
             </v-timeline-item>
 
+            <!--color="amber darken-1"-->
             <v-timeline-item
-                color="cyan"
-                left>
-                <template v-slot:opposite>
-                    <span class="timeline-item-title cyan--text"><b class="cyan--text">E</b>vents</span>
-                </template>
+                    color="cyan"
+                    left>
                 <v-card class="card-style">
                     <v-img
-                        height="150"
-                        :src="getImgUrl('imgs/events-1.jpg')"
+                            height="150"
+                            :src="getImgUrl('imgs/events-1.jpg')"
                     ></v-img>
+                    <!--
+                    <v-card-title class="cyan">
+                        <span class="title font-weight-light white--text ">Events</span>
+                        <div class="spacer"></div>
+                        <v-icon dark right >
+                            event_available
+                        </v-icon>
+                    </v-card-title>
+                    -->
                     <v-container>
                         <v-row>
                             <v-col class="hidden-sm-and-down" md="2">
                                 <v-icon size="33">event_available</v-icon>
+                                <!--<img style="width: 36px;" :src="getImgUrl('images/events.png')">-->
                             </v-col>
                             <v-col cols="12" md="10">
-                                Scaevola imperdiet nec ut,
+                                <b>Events</b> -  Scaevola imperdiet nec ut,
                                 sed euismod convenire principes nobis iisque
                             </v-col>
                         </v-row>
@@ -52,24 +68,32 @@
                 </v-card>
             </v-timeline-item>
 
+            <!--light-blue-->
             <v-timeline-item
-                color="blue"
-                right>
-                <template v-slot:opposite>
-                    <span class="timeline-item-title blue--text"><b class="blue--text">D</b>ata Availability</span>
-                </template>
+                    color="blue"
+                    right>
                 <v-card class="card-style">
                     <v-img
-                        height="150"
-                        :src="getImgUrl('imgs/data-availability-3.jpg')"
+                            height="150"
+                            :src="getImgUrl('imgs/data-availability-3.jpg')"
                     ></v-img>
+                    <!--
+                    <v-card-title class="blue">
+                        <span class="title font-weight-light white--text ">Data Availability</span>
+                        <div class="spacer"></div>
+                        <v-icon dark right >
+                            storage
+                        </v-icon>
+                    </v-card-title>
+                    -->
                     <v-container>
                         <v-row>
                             <v-col class="hidden-sm-and-down" md="2">
                                 <v-icon size="33">storage</v-icon>
+                                <!--<img style="width: 36px;" :src="getImgUrl('images/data.png')">-->
                             </v-col>
                             <v-col cols="12" md="10">
-                                Imperdiet nec ut, euismod convenire,
+                                <b>Data Availability</b> - Imperdiet nec ut,
                                 sed euismod convenire principes at iisque.
                             </v-col>
                         </v-row>
@@ -77,13 +101,14 @@
                 </v-card>
             </v-timeline-item>
 
-            <!--
             <div class="main-title display-3">
+                <!--<p><b class="indigo--text position-1">K</b>nowledge<br><br></p>-->
                 <p class="indigo--text position1"><b class="indigo--text">K</b>nowledge<br></p>
+                <!--<p><b class="cyan--text position-2">E</b>vents <br><br></p>-->
                 <p class="cyan--text position2"><b class="cyan--text">E</b>vents<br></p>
+                <!--<p><b class="blue--text position-3">D</b>ata</p>-->
                 <p class="blue--text position3"><b class="blue--text">D</b>ata</p>
             </div>
-            -->
 
         </v-timeline>
 
@@ -100,9 +125,9 @@
             <v-list class="list-data" two-line>
                 <template v-for="(item, index) in communication">
                     <v-list-item
-                        :key="item.title"
-                        ripple
-                        @click="onListCommunicationClick(item)">
+                            :key="item.title"
+                            ripple
+                            @click="onListCommunicationClick(item)">
                         <v-list-item-avatar>
                             <img v-if="item.avatar.includes('icons')"
                                  :src="getImgUrl(item.avatar)">
@@ -128,10 +153,10 @@
         <hr class="divider">
 
         <communication-more-dialog
-            v-if="show_more_dlg"
-            :show_dlg="show_more_dlg"
-            :item="show_more_item"
-            v-on:onCloseCommunicationMoreDialog="onCloseCommunicationMoreDialog">
+                v-if="show_more_dlg"
+                :show_dlg="show_more_dlg"
+                :item="show_more_item"
+                v-on:onCloseCommunicationMoreDialog="onCloseCommunicationMoreDialog">
         </communication-more-dialog>
 
     </div>
@@ -265,8 +290,8 @@
 
         .centrium {
             margin: auto;
-            width: 63%;
-            //left: 240px;
+            width: 54%;
+            left: 240px;
             top: 60px;
 
             .main-title {
@@ -274,8 +299,7 @@
                 top: 270px;
                 left: -450px;
                 white-space: normal;
-                //font-size: 3.6rem !important;
-                font-size: 2.7rem !important;
+                font-size: 3.6rem !important;
 
                 p {
                     text-shadow: 3px 3px 11px rgba(0, 0, 0, 0.3);
@@ -295,12 +319,6 @@
             .card-style {
                 box-shadow: 3px 3px 11px rgba(0, 0, 0, 0.3);
                 //text-shadow: 3px 3px 9px rgba(0, 0, 0, 0.4);
-            }
-        }
-
-        .centrium {
-            .timeline-item-title {
-                font-size: 3.3rem !important;
             }
         }
 
