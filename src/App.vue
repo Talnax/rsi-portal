@@ -198,6 +198,8 @@ export default {
         overflow: visible !important;
         clip: unset !important;
         height: unset !important;
+
+        //color: black !important;
       }
   }
 }
@@ -259,6 +261,8 @@ export default {
   //background-image: url("assets/material-design/md-005.jpg");
   //background-image: url("assets/material-design/md-1.jpeg");
   //background-image: url("assets/material-design/md-1-gey.png");
+  //background-image: url("assets/material-design/md-015.jpg");
+
   background-image: url("assets/material-design/md-014.jpg");
   height: 100%;
   width: 100%;

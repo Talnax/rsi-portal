@@ -1,7 +1,7 @@
 <template>
     <div class="first-page">
         <v-timeline class="centrium">
-            <!--color="cyan"-->
+            <!--color="indigo"-->
             <v-timeline-item
                 color="indigo"
                 right>
@@ -31,7 +31,9 @@
                 color="cyan"
                 left>
                 <template v-slot:opposite>
-                    <span class="timeline-item-title cyan--text"><b class="cyan--text">E</b>vents</span>
+                    <span class="timeline-item-title cyan--text">
+                        <b class="cyan--text">E</b>vents
+                    </span>
                 </template>
                 <v-card class="card-style">
                     <v-img
@@ -77,14 +79,6 @@
                 </v-card>
             </v-timeline-item>
 
-            <!--
-            <div class="main-title display-3">
-                <p class="indigo--text position1"><b class="indigo--text">K</b>nowledge<br></p>
-                <p class="cyan--text position2"><b class="cyan--text">E</b>vents<br></p>
-                <p class="blue--text position3"><b class="blue--text">D</b>ata</p>
-            </div>
-            -->
-
         </v-timeline>
 
         <hr class="divider">
@@ -92,6 +86,7 @@
         <div class="communication-section">
             <div class="communication-title ">
                 <!--<p class="cyan--text"><b class="black--text">C</b>ommunication</p>-->
+                <!--<p class="cyan--text"><b>C</b>ommunication</p>-->
                 <p class="cyan--text"><b>C</b>ommunication</p>
             </div>
 
@@ -126,6 +121,21 @@
         </div>
 
         <hr class="divider">
+
+        <div class="showcase-section">
+            <div class="showcase-title">
+                <p class="blue--text"><b>S</b>howcase</p>
+                <div class="showcase-subtitle">
+                    <b>Upcoming Webinar: Retail Shelf Alerting 5/5/2022</b>
+                </div>
+                <div class="showcase-explanation">
+                    An introduction webinar to review the use cases around Retail Shelf Alerting, <br>
+                    and its effectiveness for suppliers and retailers across the industry. <br>
+                </div>
+                <!--:src="getImgUrl(item.avatar)"-->
+                <img class="showcase-image" :src="getImgUrl('screen-shots/rsi-aris.png')" alt="">
+            </div>
+        </div>
 
         <communication-more-dialog
             v-if="show_more_dlg"
@@ -301,6 +311,7 @@
         .centrium {
             .timeline-item-title {
                 font-size: 2.7rem !important;
+                font-weight: 300;
             }
         }
 
@@ -332,7 +343,6 @@
 
             .communication-title {
                 position: absolute;
-                //font-size: 3.0rem !important;
                 font-size: 3.6rem !important;
                 font-weight: 300;
                 left: 50%;
@@ -354,6 +364,38 @@
                     background: transparent;
                 }
             }
+        }
+    }
+
+    .first-page {
+        .showcase-section {
+            margin-top: 30px;
+            margin-bottom: 90px;
+
+            .showcase-title {
+                font-size: 3.6rem !important;
+                font-weight: 300;
+                text-align: center;
+            }
+
+            .showcase-subtitle {
+                font-size: 1.8rem !important;
+            }
+
+            .showcase-explanation {
+                margin-top: 15px;
+                font-size: 18px;
+            }
+
+            .showcase-image {
+                margin-top: 30px;
+                width: 60%;
+
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
         }
     }
 
